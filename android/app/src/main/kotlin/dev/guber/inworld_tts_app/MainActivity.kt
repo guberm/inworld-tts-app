@@ -1,4 +1,4 @@
-package com.example.inworld_tts_app
+package dev.guber.inworld_tts_app
 
 import io.flutter.embedding.android.FlutterActivity
 

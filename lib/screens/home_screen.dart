@@ -40,6 +40,15 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   @override
+  void didUpdateWidget(HomeScreen oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (widget.sharedText != null &&
+        widget.sharedText != oldWidget.sharedText) {
+      _textController.text = widget.sharedText!;
+    }
+  }
+
+  @override
   void dispose() {
     _textController.dispose();
     _audioPlayer.dispose();
@@ -100,7 +109,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     final settings = SettingsService.instance.settings;
-    
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Inworld TTS'),
